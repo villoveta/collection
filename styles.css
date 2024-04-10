@@ -14,17 +14,24 @@ h1 {
     margin-top: 30px;
 }
 
-#gallery {
-    max-width: 800px;
-    margin: 30px auto 50px auto;
+#container {
+    width: 300px;
+    height: 300px; 
     overflow: hidden;
+  }
+
+#gallery {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 50px auto;
 }
 
 #gallery img {
-    width: 100%;
-    height: auto;
-    display: block;
-    box-sizing: border-box;
+    max-width: 90%;
+    max-height: 90%;
     margin-top: 10px;
 }
 
@@ -34,8 +41,8 @@ h1 {
     bottom: 20px;
     right: 20px;
     cursor: pointer;
-    transition: transform 0.3s, bottom 0.5s; /* Добавляем плавный переход */
-    z-index: 1; /* Чтобы кнопка была поверх других элементов */
+    transition: transform 0.3s, bottom 0.5s;
+    z-index: 1;
 }
 
 #scrollToTopBtn img {
@@ -56,26 +63,4 @@ h1 {
 .crop-container img {
     margin-top: 4%;
     width: 800px;
-}
-.image-container {
-  width: 200px; /* Задайте размер контейнера по вашему выбору */
-  height: 200px; /* Задайте размер контейнера по вашему выбору */
-  position: relative;
-  overflow: hidden;
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  animation: sway 2s infinite alternate; /* Используйте анимацию sway с продолжительностью 2 секунды */
-}
-
-@keyframes sway {
-  0% {
-    transform: rotateZ(5deg); /* Поворот изображения влево на 5 градусов */
-  }
-  100% {
-    transform: rotateZ(-5deg); /* Поворот изображения вправо на 5 градусов */
-  }
 }
