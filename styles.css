@@ -57,3 +57,25 @@ h1 {
     margin-top: 4%;
     width: 800px;
 }
+.image-container {
+  width: 200px; /* Задайте размер контейнера по вашему выбору */
+  height: 200px; /* Задайте размер контейнера по вашему выбору */
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  animation: sway 2s infinite alternate; /* Используйте анимацию sway с продолжительностью 2 секунды */
+}
+
+@keyframes sway {
+  0% {
+    transform: rotateZ(5deg); /* Поворот изображения влево на 5 градусов */
+  }
+  100% {
+    transform: rotateZ(-5deg); /* Поворот изображения вправо на 5 градусов */
+  }
+}
