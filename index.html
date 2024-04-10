@@ -14,8 +14,10 @@
         <div class="topimg"><img src="image3.png" alt="Верх"></div>
     </div>
 
-    <div id="gallery" class="image-container">
-        <div><img src="image6.png" alt="Изображение 1"></div>
+    <div class="container">
+        <div id="gallery">
+            <div id="image-container"><img src="image6.png" alt="Изображение 1"></div>
+        </div>
     </div>
 
     <div id="scrollToTopBtn" onclick="scrollToTop()">
@@ -42,6 +44,26 @@
                 window.scrollTo(0, currentScroll - (currentScroll / 10));
             }
         }
+
+        const imageContainer = document.getElementById('image-container');
+        const image = imageContainer.querySelector('img');
+
+        let rotate = 0; // Начальный угол поворота
+        let direction = 1; // Направление вращения: 1 для вправо, -1 для влево
+
+        function animate() {
+        rotate += 0.1 * direction; // Увеличиваем угол поворота медленнее
+        image.style.transform = `rotateZ(${rotate}deg)`;
+
+        if (rotate >= 5 || rotate <= -5) {
+            direction *= -1; // Изменяем направление вращения при достижении предела
+        }
+
+        requestAnimationFrame(animate); // Планируем следующий кадр анимации
+        }
+
+        animate(); // Запускаем анимацию
+
     </script>
 </body>
 </html>
